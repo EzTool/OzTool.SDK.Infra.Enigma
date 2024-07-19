@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzTool.SDK.Infra.Enigma.Standard20", "OzTool.SDK.Infra.Enigma.Standard20\OzTool.SDK.Infra.Enigma.Standard20.csproj", "{726F326C-81C0-4ED1-924E-E51A4586BDDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_TESTs", "_TESTs", "{EE00FAD7-9469-4E6E-819F-1F285163F530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UT.OzTool.SDK.Infra.Enigma", "_TESTs\UT.OzTool.SDK.Infra.Enigma\UT.OzTool.SDK.Infra.Enigma.csproj", "{B89D47FA-D20B-4CCE-83C2-09230EF6FB60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{726F326C-81C0-4ED1-924E-E51A4586BDDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{726F326C-81C0-4ED1-924E-E51A4586BDDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{726F326C-81C0-4ED1-924E-E51A4586BDDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{726F326C-81C0-4ED1-924E-E51A4586BDDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89D47FA-D20B-4CCE-83C2-09230EF6FB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89D47FA-D20B-4CCE-83C2-09230EF6FB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89D47FA-D20B-4CCE-83C2-09230EF6FB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89D47FA-D20B-4CCE-83C2-09230EF6FB60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B89D47FA-D20B-4CCE-83C2-09230EF6FB60} = {EE00FAD7-9469-4E6E-819F-1F285163F530}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD7BBF1F-6F70-44C6-88B7-CB953E0CC26E}
+	EndGlobalSection
+EndGlobal
