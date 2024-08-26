@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B89D47FA-D20B-4CCE-83C2-09230EF6FB60}</ProjectGuid>
+    <ProjectGuid>{9183653F-4929-4ED5-AB1C-ED1ECF3E825A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UT.OzTool.SDK.Infra.Enigma</RootNamespace>
-    <AssemblyName>UT.OzTool.SDK.Infra.Enigma</AssemblyName>
+    <RootNamespace>UT.OzTool.SDK.Infra.Enigma.XElement.Standard20.NET48</RootNamespace>
+    <AssemblyName>UT.OzTool.SDK.Infra.Enigma.XElement.Standard20.NET48</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -48,8 +48,8 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="OzTool.SDK.Infra.Enigma.Standard20.Fakes">
-      <HintPath>FakesAssemblies\OzTool.SDK.Infra.Enigma.Standard20.Fakes.dll</HintPath>
+    <Reference Include="OzTool.SDK.Infra.Enigma.XElement.Core.Standard20.Fakes">
+      <HintPath>FakesAssemblies\OzTool.SDK.Infra.Enigma.XElement.Core.Standard20.Fakes.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,13 +62,21 @@
     <Compile Include="_SPECs\XEnigma_IEnigma_Encode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Fakes Include="Fakes\OzTool.SDK.Infra.Enigma.Standard20.fakes" />
+    <Fakes Include="Fakes\OzTool.SDK.Infra.Enigma.XElement.Core.Standard20.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\OzTool.SDK.Infra.Enigma.Standard20\OzTool.SDK.Infra.Enigma.Standard20.csproj">
-      <Project>{726f326c-81c0-4ed1-924e-e51a4586bddf}</Project>
-      <Name>OzTool.SDK.Infra.Enigma.Standard20</Name>
+    <ProjectReference Include="..\..\OzTool.SDK.Infra.Enigma.Core.Standard20\OzTool.SDK.Infra.Enigma.Core.Standard20.csproj">
+      <Project>{ec453267-abb0-46de-8abe-269acebc66c7}</Project>
+      <Name>OzTool.SDK.Infra.Enigma.Core.Standard20</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\OzTool.SDK.Infra.Enigma.XElement.Core.Standard20\OzTool.SDK.Infra.Enigma.XElement.Core.Standard20.csproj">
+      <Project>{1ce4acca-1efb-4624-8f44-3645248c4a6c}</Project>
+      <Name>OzTool.SDK.Infra.Enigma.XElement.Core.Standard20</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\OzTool.SDK.Infra.Enigma.XElement.Standard20\OzTool.SDK.Infra.Enigma.XElement.Standard20.csproj">
+      <Project>{bef7f14f-f1d4-4841-8ba2-46ed3c431064}</Project>
+      <Name>OzTool.SDK.Infra.Enigma.XElement.Standard20</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
