@@ -4,7 +4,7 @@ using Microsoft.QualityTools.Testing.Fakes;
 
 using OzTool.SDK.Infra.Enigma.Interfaces.Fakes;
 using OzTool.SDK.Infra.Enigma.Utilities.Fakes;
-using OzTool.SDK.Infra.Enigma;
+using OzTool.SDK.Infra.Enigma.Extensions;
 
 using UT.OzTool.SDK.Infra.Enigma._Models;
 
@@ -30,7 +30,7 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
                 var objString = new XElement(typeof(string).Name, "abc");
                 var objPropertyID = new XElement("ID", objString);
                 var objDTO = new XElement("Model", objPropertyID);
-                var objResult = XEnigma.Initial().Decode<Model>(objDTO);
+                var objResult = objDTO.Decode<Model>();
 
                 //Assert                
                 Assert.AreEqual(objModel, objResult);

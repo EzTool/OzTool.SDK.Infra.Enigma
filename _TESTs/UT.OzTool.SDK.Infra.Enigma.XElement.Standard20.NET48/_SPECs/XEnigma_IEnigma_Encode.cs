@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using OzTool.SDK.Infra.Enigma;
+using OzTool.SDK.Infra.Enigma.Extensions;
 using OzTool.SDK.Infra.Enigma.Interfaces.Fakes;
 using OzTool.SDK.Infra.Enigma.Utilities.Fakes;
 
@@ -30,7 +31,7 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
 
                 //Action
                 var objModel = new Model();
-                var objResult = XEnigma.Initial().Encode(objModel);
+                var objResult = objModel.Encode();
 
                 //Assert
                 Assert.IsTrue(XElement.DeepEquals(objReturn, objResult));

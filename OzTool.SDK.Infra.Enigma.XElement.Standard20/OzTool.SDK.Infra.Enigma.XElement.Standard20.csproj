@@ -12,8 +12,4 @@
 	  <ProjectReference Include="..\OzTool.SDK.Infra.Enigma.XElement.Core.Standard20\OzTool.SDK.Infra.Enigma.XElement.Core.Standard20.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Enigma\Extensions\" />
-	</ItemGroup>
-
 </Project>
