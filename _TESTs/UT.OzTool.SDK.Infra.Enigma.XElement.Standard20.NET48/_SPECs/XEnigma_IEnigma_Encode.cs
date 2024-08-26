@@ -21,21 +21,20 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
         {
             using (ShimsContext.Create())
             {
-                //Arrange
-                var objParserBundle = new StubIParserBundle<XElement>();
-                var objReturn = new XElement("Model");
-
-                objParserBundle.EncodeOf1M0<Model>((obj1) => { return objReturn; });
-
-                ShimParserBundle.Initial = () => { return objParserBundle; };
+                //Arrange               
 
                 //Action
-                var objModel = new Model();
+                var objModel = new Model() { ID = "abc"};
                 var objResult = objModel.Encode();
 
                 //Assert
-                Assert.IsTrue(XElement.DeepEquals(objReturn, objResult));
-                Assert.AreEqual(objReturn, objResult);
+                var objValue = new XCData("abc");
+                var objString = new XElement(typeof(string).Name, objValue);
+                var objPropertyID = new XElement("ID", objString);
+                var objDTO = new XElement("Model", objPropertyID);
+
+                Assert.IsTrue(XElement.DeepEquals(objDTO, objResult));
+                
             }
         }
     }

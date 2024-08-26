@@ -19,21 +19,17 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
             using (ShimsContext.Create())
             {
                 //Arrange
-                var objParserBundle = new StubIParserBundle<XElement>();
-                var objModel = new Model() { ID = "abc"};
-
-                objParserBundle.DecodeOf1XElement((obj1) => { return objModel; });
-
-                ShimParserBundle.Initial = () => { return objParserBundle; };
+                var sID = $@"abc";
 
                 //Action
-                var objString = new XElement(typeof(string).Name, "abc");
+                var objValue = new XCData(sID);
+                var objString = new XElement(typeof(string).Name, objValue);
                 var objPropertyID = new XElement("ID", objString);
                 var objDTO = new XElement("Model", objPropertyID);
                 var objResult = objDTO.Decode<Model>();
 
                 //Assert                
-                Assert.AreEqual(objModel, objResult);
+                Assert.AreEqual(sID,objResult.ID);
             }
         }
     }

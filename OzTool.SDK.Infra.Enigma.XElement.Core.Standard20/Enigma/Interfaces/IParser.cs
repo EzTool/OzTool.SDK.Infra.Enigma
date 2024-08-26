@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OzTool.SDK.Infra.Enigma.Interfaces
+﻿namespace OzTool.SDK.Infra.Enigma.Interfaces
 {
-    public interface IParser
+    public interface IParser<TDTO> :
+        IEnigma<TDTO>
     {
+        IParser<TDTO> NextParser { get; set; }
     }
 }

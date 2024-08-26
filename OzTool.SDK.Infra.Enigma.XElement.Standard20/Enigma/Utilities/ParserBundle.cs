@@ -1,4 +1,5 @@
 ﻿using OzTool.SDK.Infra.Enigma.Interfaces;
+using OzTool.SDK.Infra.Enigma.Utilities.Parsers;
 
 using System.Xml.Linq;
 
@@ -9,11 +10,18 @@ namespace OzTool.SDK.Infra.Enigma.Utilities
     {
 
         #region -- 變數宣告 ( Declarations ) --   
+
+        private readonly IParser<XElement> l_objParser;
+
         #endregion
 
         #region -- 建構/解構 ( Constructors/Destructor ) --
 
-        private ParserBundle() { }
+        private ParserBundle()
+        {
+            l_objParser = ParserObject.Initial(this);
+            l_objParser.NextParser = ParserString.Initial(this);
+        }
 
         #endregion
 
@@ -30,12 +38,12 @@ namespace OzTool.SDK.Infra.Enigma.Utilities
 
         public TModel Decode<TModel>(XElement pi_objDTO)
         {
-            throw new System.NotImplementedException();
+            return l_objParser.Decode<TModel>(pi_objDTO);   
         }
 
         public XElement Encode<TModel>(TModel pi_objModel)
         {
-            throw new System.NotImplementedException();
+            return l_objParser.Encode(pi_objModel);
         }
 
         #endregion
