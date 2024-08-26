@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using OzTool.SDK.Infra.Enigma;
 using OzTool.SDK.Infra.Enigma.Interfaces.Fakes;
+using OzTool.SDK.Infra.Enigma.Utilities.Fakes;
 
 using System;
 using System.Xml.Linq;
@@ -15,20 +16,26 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
     public class XEnigma_IEnigma_Encode
     {
         [TestMethod]
-        public void S01()
+        public void S01_編碼為XElement結構()
         {
-            //Arrange
-            var objParserBundle = new StubIParserBundle<XElement>();
-            var objReturn = new XElement("Model");
+            using (ShimsContext.Create())
+            {
+                //Arrange
+                var objParserBundle = new StubIParserBundle<XElement>();
+                var objReturn = new XElement("Model");
 
-            objParserBundle.EncodeOf1M0<Model>((obj1) => { return objReturn; });
+                objParserBundle.EncodeOf1M0<Model>((obj1) => { return objReturn; });
 
-            //Action
-            var objModel = new Model();
-            var objResult = XEnigma.Initial(objParserBundle).Encode(objModel);
+                ShimParserBundle.Initial = () => { return objParserBundle; };
 
-            //Assert
-            Assert.AreEqual(objResult, objResult);
+                //Action
+                var objModel = new Model();
+                var objResult = XEnigma.Initial().Encode(objModel);
+
+                //Assert
+                Assert.IsTrue(XElement.DeepEquals(objReturn, objResult));
+                Assert.AreEqual(objReturn, objResult);
+            }
         }
     }
 }

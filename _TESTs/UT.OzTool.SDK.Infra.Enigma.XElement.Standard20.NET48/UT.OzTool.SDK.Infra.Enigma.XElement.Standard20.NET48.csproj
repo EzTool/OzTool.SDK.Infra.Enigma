@@ -51,6 +51,9 @@
     <Reference Include="OzTool.SDK.Infra.Enigma.XElement.Core.Standard20.Fakes">
       <HintPath>FakesAssemblies\OzTool.SDK.Infra.Enigma.XElement.Core.Standard20.Fakes.dll</HintPath>
     </Reference>
+    <Reference Include="OzTool.SDK.Infra.Enigma.XElement.Standard20.Fakes">
+      <HintPath>FakesAssemblies\OzTool.SDK.Infra.Enigma.XElement.Standard20.Fakes.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Fakes Include="Fakes\OzTool.SDK.Infra.Enigma.XElement.Core.Standard20.fakes" />
+    <Fakes Include="Fakes\OzTool.SDK.Infra.Enigma.XElement.Standard20.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using OzTool.SDK.Infra.Enigma.Interfaces;
+using OzTool.SDK.Infra.Enigma.Utilities;
 
 using System.Xml.Linq;
 
@@ -28,6 +29,11 @@ namespace OzTool.SDK.Infra.Enigma
         public static IEnigma<XElement> Initial(IParserBundle<XElement> pi_objCustomParserBundle)
         {
             return new XEnigma(pi_objCustomParserBundle);
+        }
+
+        public static IEnigma<XElement> Initial()
+        {
+            return new XEnigma(ParserBundle.Initial());
         }
 
         #endregion
