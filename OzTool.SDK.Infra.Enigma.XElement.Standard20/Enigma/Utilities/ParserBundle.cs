@@ -19,12 +19,15 @@ namespace OzTool.SDK.Infra.Enigma.Utilities
 
         private ParserBundle()
         {
+            var objListParser = ParserList.Initial(this);
+            var objDictionaryParser = ParserDictionary.Initial(this);
             var objStringParser = ParserString.Initial(this);
             var objObjectParser = ParserObject.Initial(this);
             var objDefaultParser = ParserDefault.Initial();
 
-            l_objParser = ParserList.Initial(this);
-            l_objParser.NextParser = objObjectParser;
+            l_objParser = objListParser;
+            objListParser.NextParser = objDictionaryParser;
+            objDictionaryParser.NextParser = objObjectParser;
             objObjectParser.NextParser = objStringParser;
             objStringParser.NextParser = objDefaultParser;
         }

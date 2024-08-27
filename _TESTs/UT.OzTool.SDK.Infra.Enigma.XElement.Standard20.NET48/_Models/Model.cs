@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Security.Policy;
 
 namespace UT.OzTool.SDK.Infra.Enigma._Models
 {
@@ -7,6 +8,7 @@ namespace UT.OzTool.SDK.Infra.Enigma._Models
     {
         public string ID { get; set; }
         public int LikeCount { get; set; }
+        public Dictionary<int, string> Commands { get; set; }
         public List<string> Addressies { get; set; }
         public ObservableCollection<EditLogInfo> EditLogs { get; set; }
 
