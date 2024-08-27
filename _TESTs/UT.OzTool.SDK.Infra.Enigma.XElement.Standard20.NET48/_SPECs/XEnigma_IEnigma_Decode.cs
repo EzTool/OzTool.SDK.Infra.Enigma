@@ -22,6 +22,7 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
             {
                 //Arrange
                 var sID = $@"abc";
+                var nLikeCount = 100;
                 var sAddress1 = $@"address1";
                 var sAddress2 = $@"address2";
                 var sEditLogInfoID1 = $@"A001";
@@ -32,12 +33,14 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
                     new EditLogInfo() { ID = sEditLogInfoID2}
                 };
 
-                var objValue = new XCData(sID);
+                var objValueID = new XCData(sID);
+                var objValueLikeCount = nLikeCount;
                 var objAddressValue1 = new XCData(sAddress1);
                 var objAddressValue2 = new XCData(sAddress2);
                 var objValueEditLoginfo1ID = new XCData(sEditLogInfoID1);
                 var objValueEditLoginfo2ID = new XCData(sEditLogInfoID2);
-                var objString = new XElement(typeof(string).Name, objValue);
+                var objString = new XElement(typeof(string).Name, objValueID);
+                var objInt32 = new XElement(typeof(int).Name, objValueLikeCount);
                 var objStringEditLogInfo1ID = new XElement(typeof(string).Name, objValueEditLoginfo1ID);
                 var objStringEditLogInfo2ID = new XElement(typeof(string).Name, objValueEditLoginfo2ID);
                 var objAddress1 = new XElement(typeof(string).Name, objAddressValue1);
@@ -49,10 +52,12 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
                 var objEditLogInfo2 = new XElement("EditLogInfo", objEditLog2ID);
                 var objObserverCollection = new XElement("ObservableCollection", objEditLogInfo1, objEditLogInfo2);
                 var objPropertyID = new XElement("ID", objString);
+                var objPropertyLikeCount = new XElement("LikeCount", objInt32);
                 var objPropertyAddressies = new XElement("Addressies", objListString);
                 var objPropertyEditLogs = new XElement("EditLogs", objObserverCollection);
                 var objDTO = new XElement("Model",
                     objPropertyID,
+                    objPropertyLikeCount,
                     objPropertyAddressies,
                     objPropertyEditLogs);
 
@@ -61,6 +66,7 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
 
                 //Assert                
                 Assert.AreEqual(sID, objResult.ID);
+                Assert.AreEqual(nLikeCount, objResult.LikeCount);
                 CollectionAssert.AreEqual(objEditLogs, objResult.EditLogs);
                 CollectionAssert.AreEquivalent(objAddressies, objResult.Addressies);
             }

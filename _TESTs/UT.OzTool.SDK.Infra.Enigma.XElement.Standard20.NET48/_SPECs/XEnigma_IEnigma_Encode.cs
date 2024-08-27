@@ -24,12 +24,14 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
             using (ShimsContext.Create())
             {
                 //Arrange               
-                var objValue = new XCData("abc");
+                var objValueID = new XCData("abc");
+                var objValueLikeCount = 0;
                 var objAddressValue1 = new XCData("address1");
                 var objAddressValue2 = new XCData("address2");
                 var objValueEditLoginfo1ID = new XCData("A001");
                 var objValueEditLoginfo2ID = new XCData("A002");                
-                var objString = new XElement(typeof(string).Name, objValue);
+                var objString = new XElement(typeof(string).Name, objValueID);
+                var objInt32 = new XElement(typeof(int).Name, objValueLikeCount);
                 var objStringEditLogInfo1ID = new XElement(typeof(string).Name, objValueEditLoginfo1ID);
                 var objStringEditLogInfo2ID = new XElement(typeof(string).Name, objValueEditLoginfo2ID);
                 var objAddress1 = new XElement(typeof(string).Name, objAddressValue1);
@@ -41,10 +43,12 @@ namespace UT.OzTool.SDK.Infra.Enigma._SPECs
                 var objEditLogInfo2 = new XElement("EditLogInfo", objEditLog2ID);
                 var objObserverCollection = new XElement("ObservableCollection", objEditLogInfo1, objEditLogInfo2);
                 var objPropertyID = new XElement("ID", objString);
+                var objPropertyLikeCount = new XElement("LikeCount", objInt32);
                 var objPropertyAddressies = new XElement("Addressies", objListString);
                 var objPropertyEditLogs = new XElement("EditLogs", objObserverCollection);
                 var objDTO = new XElement("Model",
                     objPropertyID,
+                    objPropertyLikeCount,
                     objPropertyAddressies,
                     objPropertyEditLogs);
 

@@ -21,10 +21,12 @@ namespace OzTool.SDK.Infra.Enigma.Utilities
         {
             var objStringParser = ParserString.Initial(this);
             var objObjectParser = ParserObject.Initial(this);
+            var objDefaultParser = ParserDefault.Initial();
 
             l_objParser = ParserList.Initial(this);
             l_objParser.NextParser = objObjectParser;
             objObjectParser.NextParser = objStringParser;
+            objStringParser.NextParser = objDefaultParser;
         }
 
         #endregion
