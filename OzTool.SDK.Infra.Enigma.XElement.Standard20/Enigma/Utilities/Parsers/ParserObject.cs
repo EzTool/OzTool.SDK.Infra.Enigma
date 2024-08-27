@@ -1,10 +1,11 @@
 ﻿using OzTool.SDK.Infra.Enigma.Extensions;
-using OzTool.SDK.Infra.Enigma.HAL;
 using OzTool.SDK.Infra.Enigma.Interfaces;
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Xml.Linq;
 
 namespace OzTool.SDK.Infra.Enigma.Utilities.Parsers

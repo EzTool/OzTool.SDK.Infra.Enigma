@@ -18,7 +18,7 @@ namespace OzTool.SDK.Infra.Enigma.Utilities.Parsers
             var objReturn = default(TModel);
             var objTypeCode = Type.GetTypeCode(typeof(TModel));
 
-            if (IsResponse(objTypeCode))
+            if (IsResponse(objTypeCode) && IsResponse(typeof(TModel)))
             {
                 objReturn = ToDecode<TModel>(pi_objDTO);
             }
@@ -34,7 +34,7 @@ namespace OzTool.SDK.Infra.Enigma.Utilities.Parsers
             var objReturn = default(XElement);
             var objTypeCode = Type.GetTypeCode(typeof(TModel));
 
-            if (IsResponse(objTypeCode))
+            if (IsResponse(objTypeCode) && IsResponse(typeof(TModel)))
             {
                 objReturn = ToEncode<TModel>(pi_objModel);
             }
@@ -45,9 +45,11 @@ namespace OzTool.SDK.Infra.Enigma.Utilities.Parsers
             return objReturn;
         }
 
+
         #endregion
 
-        protected abstract bool IsResponse(TypeCode objTypeCode);
+        protected virtual bool IsResponse(Type pi_objType) { return true; }
+        protected abstract bool IsResponse(TypeCode pi_objTypeCode);
         protected abstract TModel ToDecode<TModel>(XElement pi_objDTO);
         protected abstract XElement ToEncode<TModel>(TModel pi_objModel);
 
