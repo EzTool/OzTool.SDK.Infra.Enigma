@@ -17,6 +17,27 @@ namespace OzTool.SDK.Infra.Enigma.Utilities
 
         #region -- 建構/解構 ( Constructors/Destructor ) --
 
+        private ParserBundle(IParser<XElement> pi_objCustomParser)
+        {
+            var objListParser = ParserList.Initial(this);
+            var objDictionaryParser = ParserDictionary.Initial(this);
+            var objObjectParser = ParserObject.Initial(this);
+            var objStringParser = ParserString.Initial();
+            var objDefaultParser = ParserDefault.Initial();
+            var objLastParser = pi_objCustomParser;
+
+            l_objParser = pi_objCustomParser;
+            while (objLastParser.NextParser != null)
+            {
+                objLastParser = objLastParser.NextParser;
+            }
+            objLastParser.NextParser = objListParser;
+            objListParser.NextParser = objDictionaryParser;
+            objDictionaryParser.NextParser = objObjectParser;
+            objObjectParser.NextParser = objStringParser;
+            objStringParser.NextParser = objDefaultParser;
+        }
+
         private ParserBundle()
         {
             var objListParser = ParserList.Initial(this);
@@ -41,13 +62,18 @@ namespace OzTool.SDK.Infra.Enigma.Utilities
             return new ParserBundle();
         }
 
+        public static IParserBundle<XElement> Initial(IParser<XElement> pi_objCustomParser)
+        {
+            return new ParserBundle(pi_objCustomParser);
+        }
+
         #endregion
 
         #region -- 介面實做 ( Implements ) - [IParserBundle] --
 
         public TModel Decode<TModel>(XElement pi_objDTO)
         {
-            return l_objParser.Decode<TModel>(pi_objDTO);   
+            return l_objParser.Decode<TModel>(pi_objDTO);
         }
 
         public XElement Encode<TModel>(TModel pi_objModel)

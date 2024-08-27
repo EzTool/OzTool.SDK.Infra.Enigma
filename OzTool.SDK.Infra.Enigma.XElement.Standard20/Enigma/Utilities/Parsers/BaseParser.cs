@@ -11,7 +11,7 @@ namespace OzTool.SDK.Infra.Enigma.Utilities.Parsers
 
         #region -- 介面實做 ( Implements ) - [IParser] --
 
-        public IParser<XElement> NextParser { get; set; }
+        public virtual IParser<XElement> NextParser { get; set; }
 
         public TModel Decode<TModel>(XElement pi_objDTO)
         {

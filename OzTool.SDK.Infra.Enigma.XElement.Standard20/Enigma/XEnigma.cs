@@ -26,14 +26,19 @@ namespace OzTool.SDK.Infra.Enigma
 
         #region -- 靜態方法 (Shared Method ) --
 
+        public static IEnigma<XElement> Initial()
+        {
+            return new XEnigma(ParserBundle.Initial());
+        }
+
         public static IEnigma<XElement> Initial(IParserBundle<XElement> pi_objCustomParserBundle)
         {
             return new XEnigma(pi_objCustomParserBundle);
         }
 
-        public static IEnigma<XElement> Initial()
+        public static IEnigma<XElement> Initial(IParser<XElement> pi_objCustomParser)
         {
-            return new XEnigma(ParserBundle.Initial());
+            return new XEnigma(ParserBundle.Initial(pi_objCustomParser));
         }
 
         #endregion
