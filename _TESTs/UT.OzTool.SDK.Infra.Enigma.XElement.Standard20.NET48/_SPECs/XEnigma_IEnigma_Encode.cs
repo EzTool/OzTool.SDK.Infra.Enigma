@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using OzTool.SDK.Infra.Enigma.Extensions;
 using OzTool.SDK.Infra.Enigma.Interfaces.Fakes;
-using OzTool.SDK.Infra.Enigma.Extensions.Fakes;
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,7 +10,6 @@ using System.Xml.Linq;
 
 using UT.OzTool.SDK.Infra.Enigma._Models;
 using OzTool.SDK.Infra.Enigma.Utilities.Parsers;
-using OzTool.SDK.Infra.Enigma.Interfaces;
 using System;
 
 namespace UT.OzTool.SDK.Infra.Enigma._SPECs
