@@ -8,26 +8,18 @@ namespace OzTool.SDK.Infra.Enigma.Utilities.Parsers
     public class ParserString :
         BaseParser
     {
-        #region -- 變數宣告 ( Declarations ) --   
-
-        private IParserBundle<XElement> l_objParserBundle;
-
-        #endregion
 
         #region -- 建構/解構 ( Constructors/Destructor ) --
 
-        public ParserString(IParserBundle<XElement> pi_objParserBundle)
-        {
-            this.l_objParserBundle = pi_objParserBundle;
-        }
+        private ParserString() { }
 
         #endregion
 
         #region -- 靜態方法 (Shared Method ) --
 
-        public static IParser<XElement> Initial(IParserBundle<XElement> pi_objParserBundle)
+        public static IParser<XElement> Initial()
         {
-            return new ParserString(pi_objParserBundle);
+            return new ParserString();
         }
 
         #endregion

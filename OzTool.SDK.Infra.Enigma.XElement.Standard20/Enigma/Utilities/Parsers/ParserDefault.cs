@@ -1,9 +1,7 @@
 ﻿using OzTool.SDK.Infra.Enigma.Interfaces;
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Xml.Linq;
 
 namespace OzTool.SDK.Infra.Enigma.Utilities.Parsers

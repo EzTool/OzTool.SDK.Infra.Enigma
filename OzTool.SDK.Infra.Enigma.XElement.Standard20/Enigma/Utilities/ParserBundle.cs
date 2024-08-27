@@ -21,8 +21,8 @@ namespace OzTool.SDK.Infra.Enigma.Utilities
         {
             var objListParser = ParserList.Initial(this);
             var objDictionaryParser = ParserDictionary.Initial(this);
-            var objStringParser = ParserString.Initial(this);
             var objObjectParser = ParserObject.Initial(this);
+            var objStringParser = ParserString.Initial();
             var objDefaultParser = ParserDefault.Initial();
 
             l_objParser = objListParser;

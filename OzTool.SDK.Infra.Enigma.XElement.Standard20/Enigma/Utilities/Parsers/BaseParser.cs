@@ -45,13 +45,15 @@ namespace OzTool.SDK.Infra.Enigma.Utilities.Parsers
             return objReturn;
         }
 
-
         #endregion
+
+        #region -- 衍生函式 ( Protected Method ) -- 
 
         protected virtual bool IsResponse(Type pi_objType) { return true; }
         protected abstract bool IsResponse(TypeCode pi_objTypeCode);
         protected abstract TModel ToDecode<TModel>(XElement pi_objDTO);
         protected abstract XElement ToEncode<TModel>(TModel pi_objModel);
 
+        #endregion
     }
 }
