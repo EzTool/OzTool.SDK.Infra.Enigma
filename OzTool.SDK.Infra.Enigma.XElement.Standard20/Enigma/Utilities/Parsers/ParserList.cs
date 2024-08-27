@@ -1,5 +1,4 @@
 ﻿using OzTool.SDK.Infra.Enigma.Extensions;
-using OzTool.SDK.Infra.Enigma.HAL;
 using OzTool.SDK.Infra.Enigma.Interfaces;
 
 using System;
