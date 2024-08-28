@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+	<metadata>
+		<id>OzTool.SDK.Infra.Enigma.XElement</id>
+		<version>1.0.0</version>
+		<authors>EzTool.RD</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>		
+		<license type="expression">MIT</license>
+		<projectUrl>https://github.com/EzTool/EzTool.SDK.Infra.Enigma</projectUrl>		
+		<icon>icon.png</icon>
+		<description>
+			提供 Enigma 的 XElement 的對應實做。
+			ProjectURL: https://github.com/EzTool/EzTool.SDK.Infra.Enigma
+		</description>
+		<releaseNotes>
+# 1.0.0 初始專案。
+		</releaseNotes>
+		<copyright>@ 2024</copyright>
+		<dependencies>
+			<dependency id="OzTool.SDK.Infra.Core" version="1.0.0" />
+			<dependency id="OzTool.SDK.Infra.Enigma.XElement.Core" version="1.0.0" />
+		</dependencies>
+	</metadata>
+	<files>		
+		<file src="_images/icon.png" target="" />
+		<file src="_lib\netstandard2.0\OzTool.SDK.Infra.Enigma.XElement.Standard20.*" target="lib\netstandard20" />		
+	</files>
+</package>

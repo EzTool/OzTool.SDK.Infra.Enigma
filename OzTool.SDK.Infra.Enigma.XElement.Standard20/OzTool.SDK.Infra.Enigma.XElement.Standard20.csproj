@@ -5,6 +5,9 @@
 		<RootNamespace>OzTool.SDK.Infra</RootNamespace>
 		<FileVersion>1.0.0</FileVersion>
 		<Version>1.0.0</Version>
+		<OutputPath>../_lib/</OutputPath>
+		<Authors>EzTool.RD</Authors>
+		<Company>EzTool</Company>
 	</PropertyGroup>
 
 	<ItemGroup>
