@@ -17,7 +17,7 @@ ProjectURL: https://github.com/EzTool/EzTool.SDK.Infra.Enigma
 		</releaseNotes>
 		<copyright>@ 2024</copyright>
 		<dependencies>
-			<dependency id="OzTool.SDK.Infra.Core" version="1.0.0" />
+			<dependency id="OzTool.SDK.Infra.Enigma.Core" version="1.0.0" />
 			<dependency id="OzTool.SDK.Infra.Enigma.XElement.Core" version="1.0.0" />
 		</dependencies>
 	</metadata>
