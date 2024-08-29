@@ -9,8 +9,8 @@
 		<projectUrl>https://github.com/EzTool/EzTool.SDK.Infra.Enigma</projectUrl>		
 		<icon>icon.png</icon>
 		<description>
-			提供 Enigma.XElement 的定義與資訊。
-			ProjectURL: https://github.com/EzTool/EzTool.SDK.Infra.Enigma
+提供 Enigma.XElement 的定義與資訊。
+ProjectURL: https://github.com/EzTool/EzTool.SDK.Infra.Enigma
 		</description>
 		<releaseNotes>
 # 1.0.0 初始專案。
